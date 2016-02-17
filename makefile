@@ -5,6 +5,23 @@
 FLAGS = -Wall -Wextra -pedantic
 
 
+#makes assignment 1 executable
+assignment1: assignment_1.o assignment_1_unit_test.o
+	g++ -o assign1test $(FLAGS) assignment_1.o assignment_1_unit_test.o
+
+#creates assignment 1 object
+assignment_1.o: assignment_1.h assignment_1.cpp
+	g++ -c $(FLAGS) assignment_1.cpp
+
+#creates assignment 1 unit test objet	
+assignment_1_unit_test.o: assignment_1.h assignment_1_unit_test.cpp
+	g++ -c $(FLAGS) assignment_1_unit_test.cpp
+
+
+
+
+
+
 #makes lab6 executable
 lab6: lab_6.o lab_6_unit_test.o
 	g++ -o lab6test $(FLAGS) lab_6.o lab_6_unit_test.o
