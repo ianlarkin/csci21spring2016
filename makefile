@@ -17,6 +17,27 @@ assignment_1.o: assignment_1.h assignment_1.cpp
 assignment_1_unit_test.o: assignment_1.h assignment_1_unit_test.cpp
 	g++ -c $(FLAGS) assignment_1_unit_test.cpp
 
+#makes lab8 executable
+lab8: lab_7.o lab_8_unit_test.o
+	g++ -o lab8test $(FLAGS) lab_7.o lab_8_unit_test.o
+
+#creates lab 8 unit test object
+lab_8_unit_test.o: lab_7.h lab_8_unit_test.cpp
+	g++ -c $(FLAGS) lab_8_unit_test.cpp
+
+#makes lab7 executable
+lab7: lab_7.o lab_7_unit_test.o
+	g++ -o lab7test $(FLAGS) lab_7.o lab_7_unit_test.o
+
+#creates lab7 object
+lab_7.o: lab_7.h lab_7.cpp
+	g++ -c $(FLAGS) lab_7.cpp
+
+
+#creates lab 7 unit test object
+lab_7_unit_test.o: lab_7.h lab_7_unit_test.cpp
+	g++ -c $(FLAGS) lab_7_unit_test.cpp
+
 
 
 
@@ -33,8 +54,6 @@ lab_6.o: lab_6.h lab_6.cpp
 #creates lab6 unit test objet	
 lab_6_unit_test.o: lab_6.h lab_6_unit_test.cpp
 	g++ -c $(FLAGS) lab_6_unit_test.cpp
-
-
 
 
 #makes lab5 executable
