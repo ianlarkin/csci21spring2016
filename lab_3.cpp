@@ -53,6 +53,7 @@ string Goldilocks(string item, int number) {
         } else {
             return "This bed is just right";
         }
+    }
 }
 
 /*
@@ -97,6 +98,9 @@ int RockScissorPaper(char player_one, char player_two) {
                 return 3;
             }
             break;
+        default:
+            return 0;
+        
         }
 }
 
@@ -106,7 +110,7 @@ int RockScissorPaper(char player_one, char player_two) {
  * @return string - a string containing the converted input string
  */
 string ToLower(string input) {
-    for(int i = 0; i < input.length(); i++) {
+    for(unsigned int i = 0; i < input.length(); i++) {
         input[i] = tolower(input[i]);
     }
     return input;
@@ -119,9 +123,12 @@ string ToLower(string input) {
  * @return string - a string containing the converted input string
  */
 string ToUpper(string input) {
-    for(int i = 0; i < input.length(); i++) {
+    for(unsigned int i = 0; i < input.length(); i++) {
         input[i] = toupper(input[i]);
     }
     return input;
     
+}
+int main() {
+    return 0;
 }
