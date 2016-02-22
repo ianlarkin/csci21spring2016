@@ -70,7 +70,10 @@ int FindLarger(int, int);
  *             - Defaults to false
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-string BuildMessage();
+/*string BuildMessage();
 string BuildMessage(string);
 string BuildMessage(string,bool);
+*/
+
+string BuildMessage(string newStr = "", bool upper = false);
 #endif
