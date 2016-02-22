@@ -28,7 +28,7 @@ int FindLarger(int a, int b) {
         return b;
     }
 }
-
+/*
 string BuildMessage() {
     return "Message: empty";
 }
@@ -41,7 +41,7 @@ string BuildMessage(string newStr) {
     }
     
 }
-
+*/
 
 string BuildMessage(string newStr, bool upper) {
     if (newStr == "") {
@@ -57,8 +57,8 @@ string BuildMessage(string newStr, bool upper) {
     
 }
 
-/*
- 
+
+ /* Testing functions
  int main() {
      Hello();
      cout << endl;
@@ -78,4 +78,4 @@ string BuildMessage(string newStr, bool upper) {
      
      
  }
- */
+*/ 
