@@ -5,6 +5,21 @@
 FLAGS = -Wall -Wextra -pedantic
 
 
+#makes lab9 executable
+lab9: lab_9.o lab_9_unit_test.o
+	g++ -o lab9test $(FLAGS) lab_9.o lab_9_unit_test.o
+
+#creates lab9 object
+lab_9.o: lab_9.h lab_9.cpp
+	g++ -c $(FLAGS) lab_9.cpp
+
+#creates lab9 unit test objet	
+lab_9_unit_test.o: lab_9.h lab_9_unit_test.cpp
+	g++ -c $(FLAGS) lab_9_unit_test.cpp
+
+
+
+
 #makes assignment 1 executable
 assignment1: assignment_1.o assignment_1_unit_test.o
 	g++ -o assign1test $(FLAGS) assignment_1.o assignment_1_unit_test.o
@@ -33,15 +48,9 @@ lab7: lab_7.o lab_7_unit_test.o
 lab_7.o: lab_7.h lab_7.cpp
 	g++ -c $(FLAGS) lab_7.cpp
 
-
 #creates lab 7 unit test object
 lab_7_unit_test.o: lab_7.h lab_7_unit_test.cpp
 	g++ -c $(FLAGS) lab_7_unit_test.cpp
-
-
-
-
-
 
 #makes lab6 executable
 lab6: lab_6.o lab_6_unit_test.o
