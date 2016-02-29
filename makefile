@@ -4,6 +4,20 @@
 
 FLAGS = -Wall -Wextra -pedantic
 
+#makes lab10 executable
+lab10: temperature.o lab_10_unit_test.o
+	g++ -o lab10test $(FLAGS) temperature.o lab_10_unit_test.o
+
+#creates temperature object
+temperature.o: temperature.h temperature.cpp
+	g++ -c $(FLAGS) temperature.cpp
+
+#creates lab10  unit test objet	
+lab_10_unit_test.o: temperature.h lab_10_unit_test.cpp
+	g++ -c $(FLAGS) lab_10_unit_test.cpp
+
+
+
 
 #makes lab9 executable
 lab9: lab_9.o lab_9_unit_test.o
@@ -76,6 +90,21 @@ lab_5.o: lab_5.h lab_5.cpp
 #creates lab5 unit test objet	
 lab_5_unit_test.o: lab_5.h lab_5_unit_test.cpp
 	g++ -c $(FLAGS) lab_5_unit_test.cpp
+
+
+#makes lab4 executable
+lab4: lab_4.o lab_4_unit_test.o
+	g++ -o lab4test $(FLAGS) lab_4.o lab_4_unit_test.o
+
+#creates lab4 object
+lab_4.o: lab_4.h lab_4.cpp
+	g++ -c $(FLAGS) lab_4.cpp
+
+#creates lab4 unit test objet	
+lab_4_unit_test.o: lab_4.h lab_4_unit_test.cpp
+	g++ -c $(FLAGS) lab_4_unit_test.cpp	
+	
+
 
 #creates lab3 test executable
 lab3test: lab_3.o
