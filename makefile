@@ -4,6 +4,42 @@
 
 FLAGS = -Wall -Wextra -pedantic
 
+
+#makes lab12 executable
+lab12: item.o food_item.o magic_item.o lab_12_unit_test.o
+	g++ -o lab12test $(FLAGS) item.o food_item.o magic_item.o lab_12_unit_test.o
+	
+#makes item object
+item.o: item.h item.cpp
+	g++ -c $(FLAGS) item.cpp
+	
+#makes food_item object
+food_item.o: food_item.h food_item.cpp
+	g++ -c $(FLAGS) food_item.cpp
+
+#makes magic_item object
+magic_item.o: magic_item.h magic_item.cpp
+	g++ -c $(FLAGS) magic_item.cpp
+	
+#makes lab 12 unit test object
+lab_12_unit_test.o: item.h food_item.h magic_item.h lab_12_unit_test.cpp
+	g++ -c $(FLAGS) lab_12_unit_test.cpp
+
+
+
+
+#makes lab11 executable
+lab11: money.o lab_11_unit_test.o
+	g++ -o lab11test $(FLAGS) money.o lab_11_unit_test.o
+
+#creates money object
+money.o: money.h money.cpp
+	g++ -c $(FLAGS) money.cpp
+
+#creates lab11 unit test objet	
+lab_11_unit_test.o: money.h lab_11_unit_test.cpp
+	g++ -c $(FLAGS) lab_11_unit_test.cpp
+
 #makes lab10 executable
 lab10: temperature.o lab_10_unit_test.o
 	g++ -o lab10test $(FLAGS) temperature.o lab_10_unit_test.o
@@ -16,9 +52,6 @@ temperature.o: temperature.h temperature.cpp
 lab_10_unit_test.o: temperature.h lab_10_unit_test.cpp
 	g++ -c $(FLAGS) lab_10_unit_test.cpp
 
-
-
-
 #makes lab9 executable
 lab9: lab_9.o lab_9_unit_test.o
 	g++ -o lab9test $(FLAGS) lab_9.o lab_9_unit_test.o
@@ -30,9 +63,6 @@ lab_9.o: lab_9.h lab_9.cpp
 #creates lab9 unit test objet	
 lab_9_unit_test.o: lab_9.h lab_9_unit_test.cpp
 	g++ -c $(FLAGS) lab_9_unit_test.cpp
-
-
-
 
 #makes assignment 1 executable
 assignment1: assignment_1.o assignment_1_unit_test.o
