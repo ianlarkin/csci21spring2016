@@ -29,3 +29,6 @@ lab_12.o: lab_12.h lab_12.cpp
 #creates lab12 unit test objet	
 lab_12_unit_test.o: lab_12.h lab_12_unit_test.cpp
 	g++ -c $(FLAGS) lab_12_unit_test.cpp
+	
+clean: 
+	rm -f *.o
